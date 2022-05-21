@@ -164,6 +164,7 @@ dump_lockless_dmesg(void)
 		ERRMSG("Can't allocate memory for prb.\n");
 		return ret;
 	}
+	DEBUG_MSG("kaddr %lx symbol addr %llx\n", kaddr, SYMBOL(prb));
 	if (!readmem(VADDR, kaddr, m.prb, SIZE(printk_ringbuffer))) {
 		ERRMSG("Can't get prb.\n");
 		goto out_prb;
